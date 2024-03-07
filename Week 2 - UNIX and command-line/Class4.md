@@ -53,9 +53,9 @@
 `/fs/scratch/PAS2698/yourdir/`
 2. Make a new directory here called 'pumilios' `mkdir`
 3. Enter/change directory to 'pumilios' `cd`
-4. Fasta format sequences of the six yeast PUF proteins is already available in `/fs/scratch/PAS2698/scPUFs`. To copy this directory and its contents into your pumilios directory, go to source directory `/fs/scratch/PAS2698/` and copy scPUFs as follows `cp /fs/scratch/PAS2698/scPUFs /fs/scratch/PAS2698/yourdir/scPUFs`. Don't forget to change yourdir in the destination path to your personal directory. 
+4. Fasta format sequences of the six yeast PUF proteins is already available in `/fs/scratch/PAS2698/scPUFs`. To copy this directory and its contents into your pumilios directory, go to source directory `/fs/scratch/PAS2698/` and copy scPUFs as follows `cp /fs/scratch/PAS2698/scPUFs/* /fs/scratch/PAS2698/yourdir/pumilios`. Don't forget to change yourdir in the destination path to your personal directory. 
 5. We will get fasta format sequence of human PUM1 from NCBI using `efetch` program that we installed last week. Like unix commands, `efetch` uses flags to specify options: `-db` is database from which to get sequence, `-id` is ID of sequence, `-format` is file format to get.
-6. This command will get the human PUM1 sequence in fasta format: `efetch -db protein -id NP_001018494.1 -format fasta`. Don't forget to write the output to a file (you can name it "hsPUM1.fa".
+6. This command will get the human PUM1 sequence in fasta format: `efetch -db protein -id NP_001018494.1 -format fasta`. Don't forget to write the output to a file (you can name it "hsPUM1.fa").
 7. Use yeast PUF and human PUM1 protein sequences to make a multiple sequence alignment using the cobalt tool at: https://www.ncbi.nlm.nih.gov/tools/cobalt/cobalt.cgi
 8. There is a question to answer in today's assignment based on this sequence alignment.
 
