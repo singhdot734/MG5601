@@ -9,9 +9,9 @@
 6. In this directory, we will get a file with yeast (S. cerevisiae) genome features and investigate some features of yeast genes and genome using basic unix commands. Originally, these files are available from Saccharomyces Genome Database (SGD; yeastgenome.org) but we will get the files that are hosted by biostar handbook (allegedly, links to files and datasets in SGD can change frequently).
 7. Two commands to get data from http (or ftp) links are `curl` (step 8) or `wget` (step 9). The usage is like any other unix command: program flags input output. We will use `>` to direct the output to a file.
 8. Getting data with `curl` with option `-s` (silent) that will not print progress meter or errors on screen: `curl -s http://data.biostarhandbook.com/data/SGD_features.tab > SGD_features.tab`
-9. Getting data with wget (no flags available): `wget http://data.biostarhandbook.com/data/SGD_features.tab > SGD_features.tab`
+9. Getting data with wget (no flags available): `wget http://data.biostarhandbook.com/data/SGD_features.tab`. wget will automatically save the file, so you don't need `> filename` unless you want to save it as a different name.
 10. Check if the file is now in your directory; use `ls` or `ll`
-11. Now get the README file that explains what is in the SGD_features.tab file: `wget http://data.biostarhandbook.com/data/SGD_features.README > SGD_features.README` (or use `curl`).
+11. Now get the README file that explains what is in the SGD_features.tab file: `wget http://data.biostarhandbook.com/data/SGD_features.README` (or use `curl`).
 12. Use `ls` or `ll` to check directory contents again. The README file should also be there now.
 13. View contents of the .tab file. You can use `more` or `less`. Press “space” to move forward, “b” to move backward, q or ESC to exit. Using `head` or `tail` can show 10 lines by default. Again, usage is same: program flags input output. In this case only program and input needs specified. Output will be on your screen. Can you make sense of what type of information is there in the file?
 14. View the README file and read through the description. Now look at a few lines of the .tab file (use `head` or `tail`; use `-n` followed by a small number as a flag) and it may make more sense what all information is in the .tab file. 
