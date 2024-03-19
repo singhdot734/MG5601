@@ -39,3 +39,17 @@
 15. Pipe the output of line 11 into `head` and take a screenshot to submit as answer for class activity 2.
 16. What other patterns can one look for in chr22 sequence?
 
+# Activity 3 - Get hg38 GTF file, investigate genes on chr22 and make a custom BED file of all exons on chr22
+1. Make a new directory in your personal directory: `mkdir hg38`
+2. Go to hg38 directory and get the GTF file for the RefSeq annotation: `curl -s https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.ncbiRefSeq.gtf.gz > hg38.ncbiRefSeq.gtf.gz`
+3. Unzip the gtf file and save it as `hg38.ncbiRefSeq.gtf`
+4. How many lines are in the GTF file?
+5. Take a look at the GTF file using `head`
+6. Too many lines can be hard to read. Can you try to see if you can print only one line on the screen using a combination of `head` and `tail` (and `pipe`)?
+7. Look at the individual tab separated fields of one line and cross check with GTF/GFF file format description in lecture slides to understand what is listed in each field of the GTF file.
+8. Can you use a combination of `grep` for chr22 and `wc -l` to see how many features are on chr22?
+9. Is there a quick way to get an estimate of how many protein coding genes are on chr22? Think about what is a feature unique to only protein coding genes that is listed in the third field of the GTF file. Then you can combine multiple `grep` commands to look for particular strings and pipe it into line count.
+10. So how many (estimated) protein coding genes are on chr22? Take a screenshot of your code and answer from line 9 to submit one of the two activity 3 answers.
+11. To make a custom BED file of all exons on chr22, `grep` first for "chr22" in the GTF file, pipe it into this awk one-liner: `awk 'OFS="\t" {if ($3=="exon") {print $1,$4-1,$5,$3,$6,$7}}' > chr22exon.bed`
+12. Use `head` to view the top 10 lines of the newly generated BED file.
+13. Take a screenshot of steps 11-12 to submit your work as part of activity 3.
