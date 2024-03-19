@@ -48,8 +48,8 @@
 6. Too many lines can be hard to read. Can you try to see if you can print only one line on the screen using a combination of `head` and `tail` (and `pipe`)?
 7. Look at the individual tab separated fields of one line and cross check with GTF/GFF file format description in lecture slides to understand what is listed in each field of the GTF file.
 8. Can you use a combination of `grep` for chr22 and `wc -l` to see how many features are on chr22?
-9. Is there a quick way to get an estimate of how many protein coding genes are on chr22? Think about what is a feature unique to only protein coding genes that is listed in the third field of the GTF file. Then you can combine multiple `grep` commands to look for particular strings and pipe it into line count.
-10. So how many (estimated) protein coding genes are on chr22? Take a screenshot of your code and answer from line 9 to submit one of the two activity 3 answers.
+9. Is there a quick way to get an estimate of how many protein coding transcripts are on chr22? Think about what is a feature unique to only protein coding genes/transcripts that is listed in the third field of the GTF file. Then you can combine multiple `grep` commands to look for particular strings and pipe it into line count.
+10. So how many (estimated) protein coding transcripts are on chr22? Take a screenshot of your code and answer from line 9 to submit one of the two activity 3 answers.
 11. To make a custom BED file of all exons on chr22, `grep` first for "chr22" in the GTF file, pipe it into this awk one-liner: `awk 'OFS="\t" {if ($3=="exon") {print $1,$4-1,$5,$3,$6,$7}}' > chr22exon.bed`
 12. Use `head` to view the top 10 lines of the newly generated BED file.
 13. Take a screenshot of steps 11-12 to submit your work as part of activity 3.
