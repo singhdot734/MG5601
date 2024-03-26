@@ -182,7 +182,6 @@ iris_col = iris_summary + geom_col(aes(x = Species,
              show.legend = FALSE) + #We don't want the legend for this because it will match the one from geom_col
   geom_point(aes(x = Species, #Adds a dot at the Average
                  y = Mean),
-             linewidth = 1,
              color = "black",
              size = 5, #Change the size of the point
              shape = 18) + #Change the shape of the point
