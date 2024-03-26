@@ -2,7 +2,7 @@
 1. We will first complete making the custom BED file that contains start and end coordinates of all protein coding genes on human chr22.
 2. To do this, we will get a new gff3 file from GENCODE genes (a joint initiative of NIH and EMBL for gene annotations).
 3. Either you should already have made or make a directory in your scratch space called `hg38`.
-4. In this directory, download the gff3 file: `curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_45/gencode.v45.basic.annotation.gff3.gz > gencode45.gff3`
+4. In this directory, download the gff3 file: `curl https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_45/gencode.v45.basic.annotation.gff3.gz > gencode45.gff3.gz`
 5. Extract the file `gunzip gencode45.gff3.gz`.
 6. To view the columns of the gff3 file, try `grep "chr22" gencode45.gff3 | grep "TBX1" | head -1`.
 7. Let's compare the gff3 file with the gtf file we were working with last week, you can try this `grep "chr22" hg38.ncbiRefSeq.gtf | grep "TBX1" | head -1`.
