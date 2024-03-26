@@ -17,3 +17,10 @@
 16. This BED file will have separate lines for features for each gene such as gene, transcript, exon. To get just the lines with "gene" as feature: `grep "gene" chr22pc_gene_name.bed > chr22pc_genes.bed`
 17. Look at the top of our final BED file: `head -3 chr22pc_genes.bed`
 18. Can you make a similar BED file for another human chromosome? Take a screenshot of all your code from this last step and the top 10 lines of this new BED file to submit as classwork.
+
+# Activity 2 - Intro to R/R Studio
+1. Make a vector called `my_numbers <- c(1,2,3,41,5,6,25,33)
+2. Make another vector. Called it your_numbers (put 8 random numbers between 1-100).
+3. Make a plot(my_numbers, your_numbers)
+4. Download the plot as PNG file and submit as classwork.
+
