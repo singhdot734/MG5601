@@ -47,24 +47,25 @@ The start of the script should indclude the general purpose of the script, who w
 Check the default location by using `getwd()`. 
 Note that typing the command into the script and hitting enter doesn't run the line, it just moves you to the new line of the script.
 To run the line you can highlight the line and press the run button on the top right of the script pane, or you can click on the line and press `ctrl+enter` (or `cmd+enter` on a mac).
-4. In the OSC filebrowser make a new directory in your scratch folder called R_tutorial.
+You can also run the command in the console pane, it just won't be saved for later. 
+5. In the OSC filebrowser make a new directory in your scratch folder called R_tutorial.
 Set your R working directory to that new folder with the command `setwd("/fs/scratch/PAS2698/YourDir/R_tutorial")`.
 Make sure to change YourDir to your named folder. 
-5. Check this worked by using the same command to get the working directory as before. 
-6. The next thing you should do is load all of the packages you need in the script.
+6. Check this worked by using the same command to get the working directory as before. 
+7. The next thing you should do is load all of the packages you need in the script.
 Packages can be thought of as options for R that give you access to new commands.
 It's useful to have a chunk of code at the top of the script with all the packages, so that you don't have to search through the entire script to find the one you want to load. 
 Packages are loaded in R using the command `library(packageName)`.
 Try loading a package called tidyverse.
-7. You most likely got an error, because you don't have tidyverse installed by default.
+8. You most likely got an error, because you don't have tidyverse installed by default.
 Packages must be installed, usually from a central repository called CRAN, before they can be loaded and used.
 Install tidyverse with the command `install.packages("tidyverse")`.
 tidyverse is a suite of packages used to manipulate and manage data tables.
 Installing it on a fresh version of R also installs all other packages that it depends on, so it can take a few minutes.
-8. After the instillation is done, try loading the tidyverse package again.
-9. Any other packages you load in this script, make sure to add them to this setup region
-10. Take a screenshot of the header to your script. 
-11. You can find a short 2 page cheat sheet for most of the packages in the tidyverse in R studio. 
+9. After the instillation is done, try loading the tidyverse package again.
+10. Any other packages you load in this script, make sure to add them to this setup region
+11. Take a screenshot of the header to your script. 
+12. You can find a short 2 page cheat sheet for most of the packages in the tidyverse in R studio. 
 In the menu at the top, go to help->Cheat Sheets and select the package you're interested in to get the pdf.
 
 # Summarizing data
@@ -80,7 +81,7 @@ The easiest way to do this is to use the `summary()` command.
 4. What if you want to look at the summary of only the petal length?
 Like most data manipulation, this is most easily done using the dplyr package of the tidyverse.
 Tidyverse packages allow you to pipe commands into one another like we were doing in unix.
-The symbol for pipe in tidyverse is %>% (or |> in newer versions of R studio), inserted using the keyboard shortcut of `ctrl+shift+M`.
+The symbol for pipe in tidyverse is %>% (or |> in newer versions of R studio), inserted using the keyboard shortcut of `ctrl+shift+M` (on both PC and mac).
 When you pipe data in tidyverse you always put the input dataframe first, then pipe into subsequent commands. 
 Creating a summary in dplyr requires you to use the `summarise()` command, then specifying each summary statistic as a column.
 To replicate the Petal.Length summary column from step 4 we would use this code:
@@ -94,13 +95,13 @@ iris_petal_summary = iris %>% summarise(Min = min(Petal.Length), #We pipe the ir
                                         Max = max(Petal.Length)) 
 ```
 
-Because we piped iris into summaries we only had to specify the column into each summary function.
+Because we piped iris into summarise we only had to specify the column into each summary function.
 
 5. We can also add other information that were not in the base summary command.
 Try re-running the code from 4 again, but add in `n = n()` to get the number of values in the data table and `SD = sd(Petal.Length)` to get the standard deviation.
 6. What if we want to look at the summary of petal length for each species of iris?
 We can pipe the iris dataset first into `group_by(Species)` and then pipe that into the summarise command from above.
-Take a screenshot of the contents of this table. 
+Take a screenshot of the contents of this table and submit this as in class activity 1. 
 
 # Manipulate data
 
@@ -156,7 +157,7 @@ We just have to add a new aesthetic to the geom.
 For a scatter plot this can be done in one of two ways: `shape` to change the shape of the point or the `color` of the point.
 Remake the iris_jitter plot, but this time put `shape = Species, color = Species` inside the aes argument.
 5. Using two aesthetics for the same variable probably isn't that useful. 
-Try putting the color option outside of the `aes()` command (don't forget to add a comma after the parenthesis in aes()).
+Try putting the color option outside of the `aes()` command i.e. `geom_jitter(aes(x = petal_ratio, y = sepal_ratio, shape = Species), color = Species)`.
 The code doesn't run properly because it's looking for an object named Species, not a column in the dataset, because it's outside the aes command.
 Try instead replacing Species with "blue" and making the graph.
 6. Lets try a different geom and make a bar graph. 
