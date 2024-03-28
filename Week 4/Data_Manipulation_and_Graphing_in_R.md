@@ -101,7 +101,7 @@ Because we piped iris into summarise we only had to specify the column into each
 Try re-running the code from 4 again, but add in `n = n()` to get the number of values in the data table and `SD = sd(Petal.Length)` to get the standard deviation.
 6. What if we want to look at the summary of petal length for each species of iris?
 We can pipe the iris dataset first into `group_by(Species)` and then pipe that into the summarise command from above.
-Take a screenshot of the contents of this table and submit this as in class activity 1. 
+Remake the iris_petal_summary dataframe with the species grouping, then take a screenshot of the contents of this table and submit this as in class activity 1. 
 
 # Manipulate data
 
