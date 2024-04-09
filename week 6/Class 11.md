@@ -7,6 +7,6 @@ Then move to the new folder
 5. Run fastQC on the demo file using the command `fastqc -o output/ --extract demo.fastq`.
 `-o` specifies that the output of the program should be put in the output folder you made, and `--extract` means the contents should be unzipped.
 6. In the output folder you should see a .zip file, a .html file, and a folder named demo_fastqc
-7. Download the demo_fastqc.html file to your computer and open it.
+7. Download the SRX12339763_1_fastqc.html file to your computer and open it.
 It should open a new tab in your browser.
 8. What does this summary tell you about the quality of the sequencing data?
