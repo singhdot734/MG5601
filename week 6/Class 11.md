@@ -1,7 +1,7 @@
 # Activity 1
 1. In your folder in the scratch directory, create a new folder called fastQC.
 Then move to the new folder
-2. Copy the file demo.fastq from the class_data folder in the scratch directory to your new folder.
+2. Copy the file SRX12339763_1.fastq from the class_data folder in the scratch directory to your new folder.
 3. Load the bioinfo conda environment you made with the command `conda activate bioinfo`
 4. Make a new directory called output.
 5. Run fastQC on the demo file using the command `fastqc -o output/ --extract demo.fastq`.
