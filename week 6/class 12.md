@@ -15,7 +15,7 @@ hisat2 -x /fs/scratch/PAS2698/HISAT_index/genome_tran -1 fastQC/<RUNID>_1.fastq 
 9. Assignment: Take a screenshot of the command from step 7 and the output and paste it into your assignment.
 10. Repeat step 7 with the fastq files of the other accession number you downloaded.
 11. Assignment: Take a screenshot of your HISAT folder showing the .sam and .txt file for each run. Which run has more reads mapping to the genome? What percentage of pairs mapped discordantly in each of the two samples?
-12. Discussion: we will discuss sam file format. Run `more <RUNID>_hisat.bam` and follow along the discussion.
+12. Discussion: we will discuss sam file format. Run `more <RUNID>_hisat.sam` and follow along the discussion.
 
 # Activity 2 - Quantification of gene expression in alignment files using featureCounts
 1. To quantify changes in gene expression, we will need to find out how many reads map to each gene in each sample before we can compare conditions A and B to see which genes are going up or down in the experiment. Before we do this, we will need to do steps.
@@ -44,3 +44,5 @@ Input is at the end
 17. Multiple bam files can be fed into featureCounts. In our case, as both bam files are in the same folder HISAT, we can run featureCounts on both using the wildcard (*). Remember to go back to your personal directory as file paths in the code below are relative to that directory: `featureCounts -p -a hg38/Homo_sapiens.GRCh38.111.gtf -o quant/twoBams_featurecounts.txt HISAT/*_hisat.bam`
 18. Go into the quant folder and take a look at the twoBams_featurecounts.txt.summary file.
 19. Assignment: take a screenhot of your command from step 17 and submit. Also submit a screenshot of the contents of the twoBams_featurecounts.txt.summary file (use `more`).
+20. We can cut the columns 1 (gene IDs), 7 (gene read counts in <RUNID1>) and 8 (gene read counts in sample run2) and sort them by column 2 (-k option) in reverse order (descending) by number (-rn option) as follows: `cat twoBams_featurecounts.txt | cut -f1,7,8 | sort -k2 -rn | head`
+21. Assignment: Save the output of the previous command in a new text file. Call it twoBamsSorted.txt. Take a screenshot of the contents of your current directory as well as of the first 30 lines of the twoBamsSorted.txt file to submit. Which are the top three genes with most signal? Copy their ENSG IDs and look up their gene names and function. Summarize this information in your answer.
