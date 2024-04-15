@@ -89,3 +89,4 @@ ggsave("PUM2_motif_comparison.png", #Save the plot we made as a png
 8. **Assignment**: Post a screenshot of your PUM2_KO_DEseq_long table showing both the Motif and Target columns.
 9. Modify the code from step 5 to make a boxplot comparing the genes that are a Pum target or not. Make sure to change which column is used to fill the boxplots, and the label of the fill legend.
 10. **Assignment**: Paste the two boxplots you made into your assignment. Do the two PUM2 KDs have the same effect on genes with a PUM motif or are a PUM target? What do these boxplots tell you about the effect of PUM2 on it's targets?
+11. Make sure you save the script from today in your scratch folder, because you will need it for the next class. 
