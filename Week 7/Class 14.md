@@ -19,6 +19,6 @@ write_csv(downregulated,"PUM2_KO_downregualted_genes.csv")
 
 # Activity 2
 1. In your PUM_KO folder in scratch, make a new folder called BAM_files.
-2. Copy the BAM and index files from `/fs/scratch/PAS2698/PUM1_2_KO/BAM/` to your BAM_files folder. Hink: use the * wildcard character
+2. Copy the BAM and index files from `/fs/scratch/PAS2698/PUM1_2_KO/BAM/` to your BAM_files folder. Hint: use the * wildcard character
 3. Start a remote desktop on the supercomputer and open IGV. Load each of the BAM files you copied into it.
 4. Look at some genes on your PUM target lists. How do the reads mapped to those genes change when PUM2 is KO? 
