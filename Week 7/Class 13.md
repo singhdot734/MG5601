@@ -47,7 +47,7 @@ coord_cartesian(xlim = c(-5,5), #Set the graph x axis from -5 to 5
                 ylim = c(-5,5)) #Set the graph y axis from -5 to 5
 ```
 5. *Optional*: Try putting `geom_vline()` and `geom_hline()` before `geom_point()`. What changed? This demonstrates that geometries are put on top of each other in the order you list them. This can be useful so that you don't cover data up with background elements (like the black lines we added).
-6. **Assignment**: Include the plot you generated in your assignment. What does the plot tell you about the similarity in fold change of each PUM2 KO? Are the points with significant fold changes where you would expect?
+6. **Assignment**: Include the plot you generated in your assignment. What does the plot tell you about the similarity in fold change of each PUM2 KO? Where on the plot would you expect the points with significant fold changes? Are they where you expect them?
 
 # Activity 3
 1. Using the terminal copy the file PUM2_KO_DEseq_long.csv from the /fs/scratch/PAS2698/PUM1_2_KO to your working directory.
