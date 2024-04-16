@@ -22,8 +22,8 @@ WT_counts_plot
 ggsave("WT_count_scatterplot.png", #Save the plot we made as a png
        plot = WT_counts_plot,
        device = png(),
-       width = 4,
-       height = 6,
+       width = 6,
+       height = 4,
        units = "in", #Use inches as our units for width and height
        dpi = 300) #Save it at a good resolution for screens
 ```
