@@ -35,7 +35,7 @@ ggsave("WT_count_scatterplot.png", #Save the plot we made as a png
 1. Using the terminal copy the file combined_PUM_KO_DEseq.csv from the /fs/scratch/PAS2698/PUM1_2_KO to your working directory.
 2. Read in the DEseq table and save it as PUM_KO_DEseq (use read_csv function as above).
 3. Create a new object called PUM2_significant containing only the genes with a significant log2FoldChange by piping PUM_KO_DEseq into `filter(PUM2.K1_padj < 0.05 | PUM2.K2_padj < 0.05)`. Remember pipe in R studio is `%>%`.
-4. Modify the code from step 8 in activity 1 to make a plot compairing PUM2.K1_FC on the X axis and PUM2.K2_FC on the Y axis. Inside the `aes()` of geom_point include `color = external_gene_name %in% PUM2_significant$external_gene_name` to color points based on if they're in the significant list or not. In labs add `color = "Significant"`. Add the following code after `labs` (don't forget to put a + after the closing bracket of labs):
+4. Define a new object with `DEseq_plot = ggplot(data = PUM_KO_DEseq)`. Modify the code from step 8 in activity 1 to make a plot compairing PUM2.K1_FC on the X axis and PUM2.K2_FC on the Y axis. Change counts_plot to DEseq_plot. Inside the `aes()` of geom_point include `color = external_gene_name %in% PUM2_significant$external_gene_name` to color points based on if they're in the significant list or not. In labs add `color = "Significant"`. Add the following code after `labs` (don't forget to put a + after the closing bracket of labs):
 ```
 geom_vline(aes(xintercept = 0), #Put a black line on 0 on the x axis
            color = "black") +
